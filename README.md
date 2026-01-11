@@ -55,6 +55,7 @@ Internshala
 
 🧠 System Architecture
 
+  
   User Search Query
           ↓
   Keyword Normalization
