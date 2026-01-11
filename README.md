@@ -1,168 +1,123 @@
+
 # 🚀 Internly – Intelligent Job & Internship Finder
-Internly is a full-stack Job & Internship Intelligence System that aggregates opportunities from multiple platforms and ranks them using NLP-based relevance scoring.
-It helps students and early professionals discover the most relevant roles faster, without manually browsing multiple job portals.
 
-🔍 **Search once. Discover smarter.**
+<p align="center">
+  <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white" alt="Railway">
+  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="Scikit-Learn">
+</p>
 
-🌐 Live Demo
+**Internly** is a full-stack Job & Internship Intelligence System that aggregates opportunities from multiple platforms and ranks them using NLP-based relevance scoring. It helps students and early professionals discover the most relevant roles faster, without manually browsing multiple job portals.
 
-  Backend API (FastAPI)
-    👉 https://your-railway-domain.up.railway.app
+> **Search once. Discover smarter.**
 
-  Example Endpoint
-    GET /search?role=python
+---
 
-✨ Features
+## 📑 Table of Contents
+- [🌐 Live Demo](#-live-demo)
+- [✨ Features](#-features)
+- [🛠️ Tech Stack](#️-tech-stack)
+- [🧠 System Architecture](#-system-architecture)
+- [📁 Project Structure](#-project-structure)
+- [⚙️ Local Setup](#️-local-setup)
+- [🧪 API Usage](#-api-usage)
+- [👤 Authors](#-authors)
 
-🔎 Smart Job Search
-  Search by role (e.g., Python Developer, Web Development, Data Science)
+---
 
-🧠 NLP-Based Relevance Scoring
-  Jobs are ranked using TF-IDF + cosine similarity
+## 🌐 Live Demo
 
-🌐 Multi-Source Aggregation
-  Currently supports:
+- **Backend API (FastAPI):** [https://your-railway-domain.up.railway.app](https://your-railway-domain.up.railway.app)
+- **Example Endpoint:** `GET /search?role=python`
 
-Internshala
-  (architecture supports easy extension to other portals)
+---
 
-🕒 Human-Readable Posting Time
-    Displays results like “Posted 2 days ago”
+## ✨ Features
 
-🎨 Modern Dark UI
-    Card-based grid layout inspired by modern job platforms
+- 🔎 **Smart Job Search:** Search by role (e.g., Python Developer, Web Development, Data Science).
+- 🧠 **NLP Relevance Scoring:** Jobs are ranked using **TF-IDF + Cosine Similarity**.
+- 🌐 **Multi-Source Aggregation:** Currently supports **Internshala** (designed for easy expansion).
+- 🕒 **Human-Readable Timing:** Displays results like “Posted 2 days ago”.
+- 🎨 **Modern Dark UI:** Card-based grid layout inspired by modern platforms.
+- 🚀 **Production Ready:** Dockerized and deployed on Railway with dynamic port handling.
 
-🚀 Production Deployment
-    Dockerized & deployed on Railway
+---
 
-🏗️ Tech Stack
-  Backend
-  Python 3.10
-  FastAPI
-  Uvicorn
-  BeautifulSoup4 – Web scraping
-  scikit-learn – NLP similarity
-  NumPy
-  SQLAlchemy (ready for persistence)
-  Frontend
-  HTML5
-  CSS3 (Dark Theme UI)
-  Vanilla JavaScript (Fetch API)
-  DevOps
-  Docker
-  Railway (Cloud Deployment)
-  Git & GitHub
+## 🛠️ Tech Stack
 
-🧠 System Architecture
+| Component | Technologies Used |
+| :--- | :--- |
+| **Backend** | Python 3.10, FastAPI, Uvicorn, BeautifulSoup4 |
+| **NLP** | Scikit-learn (TF-IDF), NumPy |
+| **Frontend** | HTML5, CSS3 (Dark Theme), Vanilla JavaScript |
+| **DevOps** | Docker, Railway, Git & GitHub |
+| **Database** | SQLAlchemy (Ready for persistence) |
 
-  
-  User Search Query
-          ↓
-  Keyword Normalization
-          ↓
-  Job Scraper (Internshala)
-          ↓
-  NLP Similarity Engine
-          ↓
-  Relevance Scoring
-          ↓
-  Ranked Results API
-          ↓
-  Frontend Card UI
+---
+
+## 🧠 System Architecture
+
+```mermaid
+graph TD
+    A[User Search Query] --> B[Keyword Normalization]
+    B --> C[Job Scraper: Internshala]
+    C --> D[NLP Similarity Engine]
+    D --> E[Relevance Scoring]
+    E --> F[Ranked Results API]
+    F --> G[Frontend Card UI]
 
 📁 Project Structure
-  Internly/
-  ├── backend/
-  │   ├── main.py          # FastAPI app
-  │   ├── scraper.py       # Job scraping logic
-  │   ├── nlp_engine.py    # NLP relevance scoring
-  │   ├── models.py        # Data models
-  │   └── database.py      # DB setup (optional)
-  │
-  ├── frontend/
-  │   ├── index.html      
-  │
-  ├── Dockerfile
-  ├── requirements.txt
-  └── README.md
-
+Internly/
+├── backend/
+│   ├── main.py          # FastAPI app entry point
+│   ├── scraper.py       # Job scraping logic
+│   ├── nlp_engine.py    # NLP relevance scoring
+│   ├── models.py        # Data models
+│   └── database.py      # DB setup (optional)
+├── frontend/
+│   └── index.html       # UI interface
+├── Dockerfile           # Production container setup
+├── requirements.txt     # Dependency list
+└── README.md            # Project documentation
 ⚙️ Local Setup
-  1️⃣ Clone the repository
-    git clone https://github.com/your-username/Internly.git
-    cd Internly
 
-  2️⃣ Install dependencies
-    pip install -r requirements.txt
+Clone the repository
 
-  3️⃣ Run the backend
-    uvicorn backend.main:app --reload
+git clone https://github.com/your-username/Internly.git
+cd Internly
 
-  Backend runs at:
-    http://127.0.0.1:8000
+Install dependencies:
+pip install -r requirements.txt
 
-🐳 Docker Setup (Production)
-  docker build -t internly .
-  docker run -p 8080:8080 internly
+Run the backend:
+uvicorn backend.main:app --reload
 
-🚀 Deployment
-  The backend is deployed using Docker on Railway, with dynamic port handling via environment variables.
-  Key deployment learnings:
-  Proper $PORT expansion using sh -c
-  Python version compatibility
-  Dependency pinning to avoid NumPy 2.x build issues
-  Clean separation of frontend & backend
+The API will be live at http://127.0.0.1:8000
 
-🧪 Sample API Response
-[
-  {
-    "title": "Python Development Intern",
-    "company": "Winfrox",
-    "source": "Internshala",
-    "posted": "Posted 2 days ago",
-    "score": 0.41,
-    "url": "https://internshala.com/..."
-  }
-]
-
-📌 What I Learned
-  Building real-world web scrapers
-  Applying NLP for semantic relevance
-  Designing REST APIs with FastAPI
-  Debugging production Docker deployments
-  Handling cloud platform quirks (Railway, Render)
-  Writing clean, maintainable project structure
 
 🔮 Future Enhancements
 
-  🔔 Job alerts & notifications
+Job Alerts: Receive email and push notifications for new matches.
 
-  📊 Skill gap analysis
+Skill Gap Analysis: Suggestions for skills needed for specific roles.
 
-  🧾 Resume–Job matching
+Resume Job Matching: Upload your resume to receive a matching score.
 
-  🌍 More job portals
+Extended Sources: Integration with LinkedIn, Indeed, and Wellfound.
 
-  🔐 User accounts & saved searches
+👤 Authors
+Name	Role	Socials
+Sreehari Vinod	Lead Developer	
+![alt text](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)
+![alt text](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)
 
-  👤 Author
-
-Sreehari Vinod
-Computer Science Student | Python Developer | ML & Full-Stack Enthusiast | Full-Stack Developer | UI Designer
-
-GitHub: https://github.com/OfficialSreehariVinod
-LinkedIn: https://linkedin.com/in/sreeharivinodofficial
-
-Rooney Francis
-Computer Science Student | UI/UX Designer 
-
-Wordpress: uiron.netlify.app
-Github: https://github.com/iamRooney
-LinkedIn: https://www.linkedin.com/in/rooney-francis/
-
+Rooney Francis	UI/UX Designer	
+![alt text](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)
+![alt text](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)
 ⭐ Final Note
 
-  This project is built with real deployment constraints, not just local demos.
-  Every feature reflects practical engineering decisions — scraping limits, NLP tradeoffs, and production debugging.
+This project is built with real-world deployment constraints. Every feature—from scraping limits to NLP trade-offs—reflects practical engineering decisions.
 
-If you’re reviewing this project:
-👉 Run it. Break it. Improve it. That’s how it was designed.
+If you’re reviewing this project: Run it. Break it. Improve it. 🚀
