@@ -1,7 +1,6 @@
-fastapi
-uvicorn
-requests
-beautifulsoup4
-scikit-learn
-spacy
-sqlalchemy
+fastapi==0.110.0
+uvicorn==0.29.0
+requests==2.31.0
+beautifulsoup4==4.12.3
+scikit-learn==1.4.2
+sqlalchemy==2.0.29
