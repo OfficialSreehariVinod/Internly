@@ -1,2 +1,2 @@
-[variables]
-NIXPACKS_PYTHON_VERSION = "3.10.13"
+[providers.python]
+version = "3.10"
