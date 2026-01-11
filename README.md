@@ -62,7 +62,7 @@ Sreehari Vinod: Lead Developer
 Rooney Francis: Frontend Devloper	
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/rooneyfrancis)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rooney-francis/)
-[![Portfolio](https://img.shields.io/badge/Portfolio-2563EB?style=for-the-badge&logo=google-chrome&logoColor=white)](https://uiron.netlify.app)
+[![Portfolio](https://img.shields.io/badge/Portfolio-2563EB?style=flat&logo=google-chrome&logoColor=white)](https://uiron.netlify.app)
 
 ---
 
