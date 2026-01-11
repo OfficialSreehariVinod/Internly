@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internly | Discover Your Next Internship</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #030712;
+      --card-bg: rgba(17, 24, 39, 0.7);
+      --accent-primary: #3b82f6;
+      --accent-primary-hover: #2563eb;
+      --accent-secondary: #8b5cf6;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 40%);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* ---------- Navigation ---------- */
+    nav {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(3, 7, 18, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      color: var(--accent-primary);
+    }
+
+    /* ---------- Container ---------- */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ---------- Hero Section ---------- */
+    .hero {
+      padding: 10rem 0 4rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .hero.collapsed {
+      padding: 6rem 0 2rem;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero.collapsed h1,
+    .hero.collapsed p {
+      display: none;
+    }
+
+    /* ---------- Search Bar ---------- */
+    .search-group {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--glass-bg);
+      padding: 8px;
+      border-radius: 100px;
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      transition: var(--transition);
+    }
+
+    .search-group:focus-within {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1), 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .search-group input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 1rem 2rem;
+      color: white;
+      font-size: 1.125rem;
+      outline: none;
+    }
+
+    .search-group input::placeholder {
+      color: #4b5563;
+    }
+
+    .search-group button {
+      background: var(--accent-primary);
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: 100px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .search-group button:hover {
+      background: var(--accent-primary-hover);
+      transform: translateY(-1px);
+    }
+
+    /* ---------- Results Section ---------- */
+    #results-section {
+      padding-bottom: 5rem;
+      display: none;
+    }
+
+    .results-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .results-header h2 {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+    }
+
+    .job-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* ---------- Job Card ---------- */
+    .job-card {
+      background: var(--card-bg);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 0.5s ease backwards;
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      border-color: rgba(59, 130, 246, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      background: rgba(17, 24, 39, 0.9);
+    }
+
+    .job-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .job-card:hover::before {
+      opacity: 1;
+    }
+
+    .job-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .job-company {
+      color: var(--accent-primary);
+      font-weight: 500;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .job-metadata {
+      display: flex;
+      gap: 1rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+    }
+
+    .relevance-score {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: 100px;
+      background: rgba(34, 197, 94, 0.1);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      margin-bottom: 1.5rem;
+    }
+
+    .apply-btn {
+      margin-top: auto;
+      background: white;
+      color: black;
+      text-decoration: none;
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      text-align: center;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .apply-btn:hover {
+      background: var(--accent-primary);
+      color: white;
+    }
+
+    /* ---------- Shimmer Loading ---------- */
+    .shimmer {
+      background: linear-gradient(90deg, #111827 25%, #1f2937 50%, #111827 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 8px;
+    }
+
+    @keyframes shimmer {
+      from {
+        background-position: 200% 0;
+      }
+
+      to {
+        background-position: -200% 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      text-align: center;
+      padding: 4rem 0;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .search-group {
+        border-radius: 20px;
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      .search-group input {
+        width: 100%;
+      }
+
+      .search-group button {
+        width: 100%;
+        border-radius: 12px;
+        margin-top: 10px;
+      }
+
+      nav {
+        padding: 1rem;
+      }
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+      box-shadow: 0 0 0 1000px transparent inset !important;
+      -webkit-text-fill-color: #e5e7eb !important;
+      transition: background-color 9999s ease-in-out 0s;
+    }   
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#" class="logo" onclick="goHome()">Internly</a>
+    <div class="nav-links">
+      <a class="nav-link" onclick="goHome()">Home</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero" id="hero">
+      <h1>Launch Your Career.</h1>
+      <p>The intelligent aggregator for the next generation of talent. Find your dream internship across
+        Internshala, and beyond.
+      </p>
+
+      <div class="search-group">
+        <input type="text" id="role" placeholder="Search for 'Frontend Engineer', 'Data Science'..."
+          onkeydown="if(event.key==='Enter') search()">
+        <button id="search-btn" onclick="search()">Discover Now</button>
+      </div>
+    </section>
+
+    <section id="results-section">
+      <div class="results-header">
+        <h2 id="search-query-display">Available Roles</h2>
+        <div style="font-size: 0.875rem; color: var(--text-muted)" id="result-count"></div>
+      </div>
+
+      <div class="job-list" id="job-list">
+        <!-- Result cards go here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Internly.
+  </footer>
+
+  <script>
+    function goHome() {
+      const hero = document.getElementById("hero");
+      const resultsSection = document.getElementById("results-section");
+      const roleInput = document.getElementById("role");
+
+      hero.classList.remove("collapsed");
+      resultsSection.style.display = "none";
+      roleInput.value = "";
+    }
+
+    function search() {
+      const roleInput = document.getElementById("role");
+      const role = roleInput.value.trim();
+      const hero = document.getElementById("hero");
+      const resultsSection = document.getElementById("results-section");
+      const list = document.getElementById("job-list");
+      const countLabel = document.getElementById("result-count");
+      const queryDisplay = document.getElementById("search-query-display");
+
+      if (!role) return;
+
+      // Update UI state
+      hero.classList.add("collapsed");
+      resultsSection.style.display = "block";
+      queryDisplay.innerText = `Results for "${role}"`;
+
+      // Loading state (shimmer cards)
+      list.innerHTML = "";
+      for (let i = 0; i < 6; i++) {
+        list.innerHTML += `
+          <div class="job-card">
+            <div class="shimmer" style="height: 24px; width: 80%; margin-bottom: 12px;"></div>
+            <div class="shimmer" style="height: 16px; width: 40%; margin-bottom: 16px;"></div>
+            <div class="shimmer" style="height: 60px; width: 100%; margin-bottom: 16px;"></div>
+            <div class="shimmer" style="height: 40px; width: 100%; border-radius: 12px;"></div>
+          </div>
+        `;
+      }
+
+      fetch(`/search?role=${encodeURIComponent(role)}`)
+        .then(res => res.json())
+        .then(data => {
+          list.innerHTML = "";
+          countLabel.innerText = `${data.length} matches found`;
+
+          if (!data || data.length === 0) {
+            list.innerHTML = `
+              <div style="grid-column: 1/-1; text-align: center; padding: 4rem 0;">
+                <p style="color: var(--text-muted); font-size: 1.125rem;">We couldn't find any roles for "${role}" right now.</p>
+                <button onclick="location.reload()" style="margin-top: 2rem; background: transparent; border: 1px solid var(--accent-primary); color: var(--accent-primary); padding: 0.75rem 1.5rem; border-radius: 100px; cursor: pointer;">Try another search</button>
+              </div>
+            `;
+            return;
+          }
+
+          data.forEach((job, index) => {
+            const delay = index * 0.1;
+            const card = `
+              <div class="job-card" style="animation-delay: ${delay}s">
+                <div class="job-title">${job.title}</div>
+                <div class="job-company">${job.company}</div>
+                
+                <div class="job-metadata">
+                  <div class="meta-item">📍 ${job.location || 'Remote'}</div>
+                  <div class="meta-item">🔗 ${job.source}</div>
+                  <div class="meta-item">🕒 ${job.posted || 'Recent'}</div>
+                </div>
+
+                <div class="relevance-score">${Math.round(job.score * 100)}% Match</div>
+
+                <a href="${job.url}" target="_blank" class="apply-btn">View Opportunity</a>
+              </div>
+            `;
+            list.innerHTML += card;
+          });
+        })
+        .catch(err => {
+          console.error(err);
+          list.innerHTML = `<p style="grid-column: 1/-1; text-align: center;">Something went wrong. Please ensure the backend is running.</p>`;
+        });
+    }
+  </script>
+</body>
+
+</html>
