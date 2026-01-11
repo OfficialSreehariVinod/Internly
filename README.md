@@ -19,18 +19,13 @@
 - [🌐 Live Demo](#-live-demo)
 - [✨ Features](#-features)
 - [🛠️ Tech Stack](#️-tech-stack)
-- [🧠 System Architecture](#-system-architecture)
-- [📁 Project Structure](#-project-structure)
-- [⚙️ Local Setup](#️-local-setup)
-- [🧪 API Usage](#-api-usage)
 - [👤 Authors](#-authors)
 
 ---
 
 ## 🌐 Live Demo
 
-- **Backend API (FastAPI):** [https://your-railway-domain.up.railway.app](https://your-railway-domain.up.railway.app)
-- **Example Endpoint:** `GET /search?role=python`
+https://your-railway-domain.up.railway.app
 
 ---
 
@@ -57,47 +52,9 @@
 
 ---
 
-## 📁 Project Structure
-Internly/
-├── backend/
-│   ├── main.py          # FastAPI app entry point
-│   ├── scraper.py       # Job scraping logic
-│   ├── nlp_engine.py    # NLP relevance scoring
-│   ├── models.py        # Data models
-│   └── database.py      # DB setup (optional)
-├── frontend/
-│   └── index.html       # UI interface
-├── Dockerfile           # Production container setup
-├── requirements.txt     # Dependency list
-└── README.md            # Project documentation
-⚙️ Local Setup
 
-Clone the repository
+## 👤 Authors
 
-git clone https://github.com/your-username/Internly.git
-cd Internly
-
-Install dependencies:
-pip install -r requirements.txt
-
-Run the backend:
-uvicorn backend.main:app --reload
-
-The API will be live at http://127.0.0.1:8000
-
-
-🔮 Future Enhancements
-
-Job Alerts: Receive email and push notifications for new matches.
-
-Skill Gap Analysis: Suggestions for skills needed for specific roles.
-
-Resume Job Matching: Upload your resume to receive a matching score.
-
-Extended Sources: Integration with LinkedIn, Indeed, and Wellfound.
-
-👤 Authors
-Name	Role	Socials
 Sreehari Vinod	Lead Developer	
 ![alt text](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)
 ![alt text](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)
@@ -105,7 +62,10 @@ Sreehari Vinod	Lead Developer
 Rooney Francis	UI/UX Designer	
 ![alt text](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)
 ![alt text](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)
-⭐ Final Note
+
+---
+
+## ⭐ Final Note
 
 This project is built with real-world deployment constraints. Every feature—from scraping limits to NLP trade-offs—reflects practical engineering decisions.
 
