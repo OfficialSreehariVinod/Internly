@@ -57,18 +57,7 @@
 
 ---
 
-## 🧠 System Architecture
-
-```mermaid
-graph TD
-    A[User Search Query] --> B[Keyword Normalization]
-    B --> C[Job Scraper: Internshala]
-    C --> D[NLP Similarity Engine]
-    D --> E[Relevance Scoring]
-    E --> F[Ranked Results API]
-    F --> G[Frontend Card UI]
-
-📁 Project Structure
+## 📁 Project Structure
 Internly/
 ├── backend/
 │   ├── main.py          # FastAPI app entry point
