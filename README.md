@@ -55,11 +55,11 @@ https://your-railway-domain.up.railway.app
 
 ## 👤 Authors
 
-Sreehari Vinod	Lead Developer	
+Sreehari Vinod: Lead Developer	
 ![alt text](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)
 ![alt text](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)
 
-Rooney Francis	UI/UX Designer	
+Rooney Francis: UI/UX Designer	
 ![alt text](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)
 ![alt text](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)
 
