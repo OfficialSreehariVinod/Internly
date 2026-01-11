@@ -3,8 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 import os
-from scraper import scrape_internshala
-from nlp_engine import RoleMatcher
+from backend.scraper import scrape_internshala
+from backend.nlp_engine import RoleMatcher
 
 app = FastAPI()
 app.add_middleware(
