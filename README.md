@@ -25,7 +25,7 @@
 
 ## 🌐 Live Demo
 
-https://your-railway-domain.up.railway.app
+https://internly-production.up.railway.app/
 
 ---
 
