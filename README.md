@@ -56,12 +56,12 @@ https://internly-production.up.railway.app/
 ## 👤 Authors
 
 Sreehari Vinod: Lead Developer	
-![alt text](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)
-![alt text](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/OfficialSreehariVinod)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](linkedin.com/in/sreeharivinodofficial)
 
 Rooney Francis: UI/UX Designer	
-![alt text](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)
-![alt text](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/rooneyfrancis)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rooney-francis/)
 
 ---
 
