@@ -1,8 +1,8 @@
-🚀 Internly – Intelligent Job & Internship Finder
+# 🚀 Internly – Intelligent Job & Internship Finder
 Internly is a full-stack Job & Internship Intelligence System that aggregates opportunities from multiple platforms and ranks them using NLP-based relevance scoring.
 It helps students and early professionals discover the most relevant roles faster, without manually browsing multiple job portals.
 
-🔍 Search once. Discover smarter.
+🔍 **Search once. Discover smarter.**
 
 🌐 Live Demo
 
