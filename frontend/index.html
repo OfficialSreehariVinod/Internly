@@ -183,6 +183,10 @@
       font-size: 1rem;
     }
 
+    .mobile-text {
+      display: none;
+    }
+
     .search-group button:hover {
       background: var(--accent-primary-hover);
       transform: translateY(-1px);
@@ -366,24 +370,36 @@
       }
 
       .search-group button {
-        width: 100%;
-        border-radius: 12px;
-        margin-top: 10px;
+        width: auto;
+        padding: 1rem;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+        margin-top: 0;
+        margin-left: 10px;
+      }
+
+      .search-group {
+        flex-direction: row;
+        border-radius: 100px;
+      }
+
+      .desktop-text {
+        display: none;
+      }
+
+      .mobile-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       nav {
         padding: 1rem;
       }
     }
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover,
-    input:-webkit-autofill:focus,
-    input:-webkit-autofill:active {
-      -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
-      box-shadow: 0 0 0 1000px transparent inset !important;
-      -webkit-text-fill-color: #e5e7eb !important;
-      transition: background-color 9999s ease-in-out 0s;
-    }   
   </style>
 </head>
 
@@ -406,7 +422,16 @@
       <div class="search-group">
         <input type="text" id="role" placeholder="Search for 'Frontend Engineer', 'Data Science'..."
           onkeydown="if(event.key==='Enter') search()">
-        <button id="search-btn" onclick="search()">Discover Now</button>
+        <button id="search-btn" onclick="search()">
+          <span class="desktop-text">Discover Now</span>
+          <span class="mobile-text">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+        </button>
       </div>
     </section>
 
